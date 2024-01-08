@@ -1,4 +1,4 @@
-# Purple Pay Specification
+# Decentralised Payments Protocol Specification for EVM Chains
 
 ## Summary
 
@@ -23,6 +23,13 @@ This requires the following setup on the part of the merchant integrating the pa
 1. Deploy a factory contract with predict and deploy functionalities
 2. Generate a new counterfactual contract address for each payment request and token
 3. Track the balance of the counterfactual contract instances to check payment status
+
+The above mentioned approach assumes that wallets of the EVM ecosystem have not adopted this standard.
+
+## Alternative Approach: Callback Url for wallet with Payment Id
+A different approach would be to encode a paymentId and redirectUrl which the wallet can call after the transaction is complete with transaction hash and paymentId together to notify the merchant server of the payment completion and the transaction hash to look for onchain.
+
+This assumes the wallets have integrated the protocol specifications and are willing to make  calls to provided urls.
 
 Warning: It is important for the applications to independently confirm the status and validity of the transaction before exchanging goods and services.
 
@@ -103,6 +110,7 @@ chainId should be used to specify the chain handling the transaction.
 
 
 ## Specification: Interactive Transaction Request
+**Note: The below given details has been adapted from Solana Pay specifications since it was relevant and succinct. Only the parts relevant to EVM have been retained.
 It creates the structure for enabling interactive request and bi-directional communication between wallets and other etntities within the context of a transaction.
 
 ethereum:<link>
