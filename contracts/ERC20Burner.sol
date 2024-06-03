@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/interfaces/IERC20.sol";
 import "./errors.sol";
 
 /**
- * @title NativeBurner
+ * @title ERC20Burner
  * @dev Handle payments made in native token |
  * _tokenAddress is the erc20 token |
  * _amount is the order amount that merchant has requested
